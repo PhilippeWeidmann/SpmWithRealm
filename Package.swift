@@ -7,6 +7,10 @@ let package = Package(
     name: "SpmWithRealm",
     products: [
         .library(
+            name: "OtherSPM",
+            targets: ["OtherSPM"]
+        ),
+        .library(
             name: "SpmWithRealm",
             targets: ["SpmWithRealm"]
         )
@@ -16,9 +20,13 @@ let package = Package(
     ],
     targets: [
         .target(
+            name: "OtherSPM",
+            dependencies: []
+        ),
+        .target(
             name: "SpmWithRealm",
             dependencies: [
-                .product(name: "Realm", package: "realm-swift"),
+                "OtherSPM",
                 .product(name: "RealmSwift", package: "realm-swift")
             ]
         ),
