@@ -27,6 +27,7 @@ let package = Package(
             name: "SpmWithRealm",
             dependencies: [
                 "OtherSPM",
+                .product(name: "Realm", package: "realm-swift"),
                 .product(name: "RealmSwift", package: "realm-swift")
             ]
         ),
